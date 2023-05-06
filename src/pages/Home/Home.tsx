@@ -1,5 +1,5 @@
 import "./Home.css";
-import backgroundVideo from "../../assets/background_video.mp4";
+import backgroundVideo from "../../assets/background-futuristic.mp4";
 import backgroundAudio from "../../assets/videoplayback.mp3";
 import FollowModal from "../../components/FollowModal/FollowModal";
 import { useEffect, useState } from "react";
