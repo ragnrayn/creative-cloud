@@ -56,7 +56,7 @@ function Home() {
 
     return (
         <>
-            <div className="home" onMouseMove={handleMove} onClick={() => setToggleAudio(!toggleAudio)}>
+            <div className="home" onMouseMove={handleMove} onClick={() => setToggleAudio(true)}>
                 <video id="background-video" loop autoPlay muted>
                     <source src={backgroundVideo} type="video/mp4" />
                 </video>
@@ -69,7 +69,7 @@ function Home() {
                             </a>
                         </div>
                         <div className="mute-btn" onMouseEnter={() => muteAudio.play()} onMouseLeave={() => muteAudio.pause()}>
-                            <button onClick={() => setToggleAudio(!toggleAudio)}><span className="circle"></span></button>
+                            <button onClick={(e) => {setToggleAudio(!toggleAudio); e.stopPropagation()}}><span className="circle"></span></button>
                         </div>
                     </div>
                     <div className="soon">
