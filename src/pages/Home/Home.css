@@ -110,3 +110,12 @@
     background: #fff;
     margin-top: 20px;
 }
+
+.soon-line{
+    width: 300px;
+    height: 1px;
+    background: #fff;
+    position: absolute;
+    top: 250px;
+    right: 200px;
+}

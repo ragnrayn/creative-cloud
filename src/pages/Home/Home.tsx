@@ -5,6 +5,9 @@ import FollowModal from "../../components/FollowModal/FollowModal";
 import { useEffect, useState } from "react";
 import headerLogo from "../../assets/creative-cloud-logo.png";
 import mute from "../../assets/hear-beat.mp3";
+import contactUs from "../../assets/strange-drone.mp3";
+import followAudio from "../../assets/low.mp3";
+import desclimerAudio from "../../assets/transition-coat.mp3";
 
 function Home() {
 
@@ -12,6 +15,9 @@ function Home() {
     const [audio] = useState(new Audio(backgroundAudio));
     const [toggleAudio, setToggleAudio] = useState(false);
     const [muteAudio] = useState(new Audio(mute));
+    const [contact] = useState(new Audio(contactUs));
+    const [follow] = useState(new Audio(followAudio));
+    const [desclimer] = useState(new Audio(desclimerAudio));
 
 
     const [textFirst, setTextFirst] = useState("SI");
@@ -68,7 +74,8 @@ function Home() {
                     </div>
                     <div className="soon">
                         comming soon
-                        <div className="contact" onClick={(e) => { setIsFollowOpen(true); e.stopPropagation() }}>
+                        <div className="soon-line"></div>
+                        <div className="contact" onMouseEnter={() => contact.play()} onMouseLeave={() => contact.pause()} onClick={(e) => { setIsFollowOpen(true); e.stopPropagation() }}>
                             <button style={{ transform: isFollowOpen ? "rotate(45deg)" : "" }}>
                                 <span className="circle"></span>
                             </button>
@@ -88,8 +95,8 @@ function Home() {
                     </div>
                 </div>
                 <footer className="footer">
-                    <div className="footer-follow">Follow</div>
-                    <div className="footer-desclimer">Declimer</div>
+                    <div className="footer-follow"  onMouseEnter={() => follow.play()} onMouseLeave={() => follow.pause()}>Follow</div>
+                    <div className="footer-desclimer"  onMouseEnter={() => desclimer.play()} onMouseLeave={() => desclimer.pause()}>Declimer</div>
                 </footer>
             </div>
             <FollowModal isOpen={isFollowOpen} setIsOpen={setIsFollowOpen} />
