@@ -56,7 +56,7 @@
 }
 
 .contact button {
-    padding: 20px;
+    padding: 15px;
     background: #D9D9D9;
     border: unset;
     display: flex;
@@ -65,9 +65,9 @@
 }
 
 .contact-text{
-    font-size: 21px;
+    font-size: 16px;
     position: absolute;
-    top: 170px;
+    top: 150px;
     left: 20px;
     width: 150px;
 }
@@ -82,4 +82,31 @@
     align-items: center;
     color: #fff;
     padding: 0 60px;
+}
+
+.home-page__header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.coords{
+    position: absolute;
+    left: 0;
+    top: 332px;
+    font-size: 16px;
+    margin-top: 30px;
+}
+
+.coords-text{
+    width: 220px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.coords-line{
+    width: 300px;
+    height: 1px;
+    background: #fff;
+    margin-top: 20px;
 }
