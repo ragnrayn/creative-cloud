@@ -73,7 +73,7 @@ function Home() {
                         </div>
                     </div>
                     <div className="soon">
-                        comming soon
+                        coming soon
                         <div className="soon-line"></div>
                         <div className="contact" onMouseEnter={() => contact.play()} onMouseLeave={() => contact.pause()} onClick={(e) => { setIsFollowOpen(true); e.stopPropagation() }}>
                             <button style={{ transform: isFollowOpen ? "rotate(45deg)" : "" }}>
