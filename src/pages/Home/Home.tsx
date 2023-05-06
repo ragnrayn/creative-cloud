@@ -1,15 +1,17 @@
 import "./Home.css";
 import backgroundVideo from "../../assets/background_video.mp4";
-import backgroundAudio from "../../assets/tenet.mp3";
+import backgroundAudio from "../../assets/videoplayback.mp3";
 import FollowModal from "../../components/FollowModal/FollowModal";
 import { useEffect, useState } from "react";
 import headerLogo from "../../assets/creative-cloud-logo.png";
+import mute from "../../assets/hear-beat.mp3";
 
 function Home() {
 
     const [isFollowOpen, setIsFollowOpen] = useState<boolean>(false);
     const [audio] = useState(new Audio(backgroundAudio));
     const [toggleAudio, setToggleAudio] = useState(false);
+    const [muteAudio] = useState(new Audio(mute));
 
 
     const [textFirst, setTextFirst] = useState("SI");
@@ -22,6 +24,7 @@ function Home() {
     useEffect(() => {
         if (toggleAudio === true) {
             audio.play();
+            audio.volume = 0.02;
             return;
         }
         audio.pause();
@@ -59,7 +62,7 @@ function Home() {
                                 <img src={headerLogo} width={"50px"} alt="" />
                             </a>
                         </div>
-                        <div className="mute-btn">
+                        <div className="mute-btn" onMouseEnter={() => muteAudio.play()} onMouseLeave={() => muteAudio.pause()}>
                             <button onClick={() => setToggleAudio(!toggleAudio)}><span className="circle"></span></button>
                         </div>
                     </div>
