@@ -1,11 +1,23 @@
 import "./Home.css";
 import backgroundVideo from "../../assets/background_video.mp4";
+import backgroundAudio from "../../assets/tenet.mp3";
 import FollowModal from "../../components/FollowModal/FollowModal";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function Home() {
 
     const [isFollowOpen, setIsFollowOpen] = useState<boolean>(false);
+    const [audio] = useState(new Audio(backgroundAudio));
+    const [toggleAudio, setToggleAudio] = useState(true);
+
+    useEffect(() => {
+        console.log(toggleAudio);
+        if(toggleAudio === true){
+            audio.play();
+            return;
+        }
+        audio.pause();
+    }, [toggleAudio])
 
     return (
         <>
@@ -16,7 +28,7 @@ function Home() {
 
                 <div className="home-page">
                     <div className="mute-btn">
-                        <button><span className="circle"></span></button>
+                        <button onClick={() => setToggleAudio(!toggleAudio)}><span className="circle"></span></button>
                     </div>
                     <div className="soon">
                         comming soon
