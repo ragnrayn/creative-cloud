@@ -120,3 +120,35 @@
     top: 250px;
     right: 200px;
 }
+
+
+
+@media screen and (max-width: 575px) {
+    #background-video{
+        display: none;
+    }
+
+    .home{
+        background: #000;
+    }
+
+    .soon-line{
+        display: none;
+    }
+
+    .coords{
+        display: none;
+    }
+
+    .soon{
+        font-size: 90px;
+        text-align: center;
+    }
+
+    .contact{
+        position: absolute;
+        left: 22px;
+        top: 326px;
+    }
+
+}
